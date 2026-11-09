@@ -16,7 +16,7 @@ def parse_args():
     # resnet50 (imagenet) software baseline (quantized): 80.012% (79.972%)
     parser.add_argument('--dataset', default='cifar10', help='cifar10|cifar100|imagenet')
     parser.add_argument('--model', default='vgg8', help='vgg8|DenseNet40|resnet18|resnet50|swin_t')
-    parser.add_argument('--data_path', default='/path/to/datasets/', help='path to saved datasets')
+    parser.add_argument('--data_path', default='./datasets/', help='path to saved datasets')
     parser.add_argument('--model_path', default='./models/', help='path to saved models')
     parser.add_argument('--test_name', default='test', help='test name')
 
@@ -41,7 +41,7 @@ def parse_args():
     parser.add_argument('--bitcell', type=int, default=1, help='cell precision (e.g. 4-bit/cell)')
     parser.add_argument('--mem_type', type=str, default='resistive', help='memory cell type: resisitive | capacitive')
     parser.add_argument('--off_state', type=float, default=6e-3, help='device off state (conductance (S) or capacitance (F))')
-    parser.add_argument('--on_state', type=float, default=6e-13*17, help='device on conductance')
+    parser.add_argument('--on_state', type=float, default=6e-3*17, help='device on conductance')
     parser.add_argument('--mem_states_file', type=str, default="mem_states.csv", help='path to .csv file containing mean and std for each memory state')
     parser.add_argument('--vdd', type=float, default=1, help='supply voltage')
     parser.add_argument('--read_noise', type=float, default=0.0, help='std of conductance read noise, derive from SPICE or experiment, or use to test reliability')

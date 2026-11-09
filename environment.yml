@@ -276,4 +276,4 @@ dependencies:
       - xxhash==3.4.1
       - yarl==1.9.3
       - zstandard==0.22.0
-prefix: /path/to/conda/envs/neurosim
+prefix: ./.conda
